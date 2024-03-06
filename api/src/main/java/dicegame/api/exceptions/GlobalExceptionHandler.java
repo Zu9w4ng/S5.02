@@ -13,7 +13,7 @@ import java.util.Date;
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(PlayerNotFoundException.class)
-    public ResponseEntity<ErrorMessage> PlayerNotFoundException(PlayerNotFoundException ex, WebRequest request) {
+    public ResponseEntity<ErrorMessage> playerNotFoundException(PlayerNotFoundException ex, WebRequest request) {
         ErrorMessage message = new ErrorMessage(
                 HttpStatus.NOT_FOUND.value(),
                 new Date(),
@@ -24,7 +24,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(PlayerAlreadyExistException.class)
-    public ResponseEntity<ErrorMessage> PlayerAlreadyExistException(PlayerAlreadyExistException ex, WebRequest request) {
+    public ResponseEntity<ErrorMessage> playerAlreadyExistException(PlayerAlreadyExistException ex, WebRequest request) {
         ErrorMessage message = new ErrorMessage(
                 HttpStatus.CONFLICT.value(),
                 new Date(),
